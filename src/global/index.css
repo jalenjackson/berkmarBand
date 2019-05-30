@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url(../images/Gotham-Medium.otf) format('opentype');
+}
+
+* {
+    font-family: MyFont, sans-serif;
+}
+
+.ant-menu-submenu a {
+    color: #626262
+}

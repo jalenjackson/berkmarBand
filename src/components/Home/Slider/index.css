@@ -1,0 +1,16 @@
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 370px;
+    line-height: 160px;
+    background: #EE3F46;
+    overflow: hidden;
+}
+
+.slide1 {
+    background: url('../../../images/pic1.webp') center center no-repeat;
+    background-size: cover;
+}
+
+.ant-carousel .slick-slide h3 {
+    color: #fff;
+}
