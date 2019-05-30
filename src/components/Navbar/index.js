@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import { Menu, Icon } from 'antd';
-import { toggleModal } from "../../store/Media/actions";
 import { connect } from "react-redux";
 import styled from 'styled-components'
 
@@ -68,9 +67,11 @@ const Navbar = props => {
             </Menu.Item>
           </Menu.ItemGroup>
         </SubMenu>
-        <Menu.Item onClick={ props.toggleModal } key="media:1">
-          <Icon type="file-image" theme='twoTone' twoToneColor='#EE3F46' />
-          Media
+        <Menu.Item key="media:1">
+          <NavLink to='/media'>
+            <Icon type="file-image" theme='twoTone' twoToneColor='#EE3F46' />
+            Media
+          </NavLink>
         </Menu.Item>
         <SubMenu
           title={
@@ -132,10 +133,4 @@ const Navbar = props => {
   )
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    toggleModal: () => dispatch(toggleModal())
-  }
-};
-
-export default connect(null, mapDispatchToProps)(Navbar);
+export default Navbar;

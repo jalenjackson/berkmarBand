@@ -2,9 +2,6 @@ import React from 'react';
 import Navbar from './components/Navbar/index';
 import Home from './components/Home';
 import About from './components/About';
-import { Provider } from 'react-redux';
-import RootReducer from './store/rootReducer';
-import { createStore } from "redux";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { useTransition, animated } from 'react-spring';
 import Media from './components/Media';
@@ -22,11 +19,8 @@ import BandAndBoosterAccomplishments from "./components/About/BandBoosterAccompl
 import MeetingMinutes from "./components/About/MeetingMinutes";
 import MeetingMinutes2 from "./components/About/MeetingMinutes2";
 import ByLaws from "./components/About/Bylaws";
-import Footer from "./components/Footer";
 
 const App = props => {
-
-  const store = createStore(RootReducer);
 
   const { location } = props;
 
@@ -37,9 +31,8 @@ const App = props => {
   });
 
   return (
-    <Provider store={ store }>
+    <>
       <Navbar />
-      <Media />
       { transitions.map(({ item, props, key }) => (
         <animated.div key={ key } style={ props }>
           <Switch location={ item }>
@@ -58,13 +51,16 @@ const App = props => {
             <Route exact path='/2017-2018-meeting-minutes-and-agendas' component={ MeetingMinutes2 } />
             <Route exact path='/the-bylaws' component={ ByLaws } />
 
+            <Route exact path='/media' component={ Media } />
+
+
             <Route exact path='/concessions-pre-order' component={ ConcessionsPreOrder } />
             <Route exact path='/alumni' component={ Alumni } />
             <Route exact path='/contact' component={ ContactUs } />
           </Switch>
         </animated.div>
       )) }
-    </Provider>
+    </>
   );
 };
 

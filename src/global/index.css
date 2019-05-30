@@ -1,3 +1,5 @@
+@import "../../node_modules/react-image-gallery/styles/css/image-gallery.css";
+
 @font-face {
     font-family: 'MyFont';
     src: url(../images/Gotham-Medium.otf) format('opentype');
